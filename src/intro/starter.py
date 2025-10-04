@@ -1,7 +1,8 @@
 import boto3
 import pprint
 
-bedrock = boto3.client(service_name='bedrock', region_name='us-west-2')
+session = boto3.Session(profile_name="bedrock")
+bedrock = session.client(service_name="bedrock", region_name="us-west-2")
 
 pp = pprint.PrettyPrinter(indent=4).pprint
 
@@ -15,5 +16,5 @@ def get_foundation_model(modelIdentifier):
   model = bedrock.get_foundation_model(modelIdentifier=modelIdentifier)
   pp(model)      
 
-# list_foundation_models()
-get_foundation_model(modelIdentifier='mistral.mistral-large-2402-v1:0')
+list_foundation_models()
+# get_foundation_model(modelIdentifier='mistral.mistral-large-2402-v1:0')
