@@ -9,7 +9,7 @@ stability_image_config = json.dumps(
 {
     "taskType": "TEXT_IMAGE",
     "textToImageParams": {
-        "text": "a photo of a beautiful banshee in a forest",      
+        "text": "a photo of a cute cartoon cat",      
         "negativeText": "Clouds"
     },
     "imageGenerationConfig": {
@@ -34,6 +34,6 @@ base64_image = response_body.get("images")[0]
 
 base_64_image = base64.b64decode(base64_image)
 
-file_path = "banshee_dark_forest.png"
+file_path = "cute_cartoon_cat.png"
 with open(file_path, "wb") as f:
   f.write(base_64_image)
